@@ -1,0 +1,85 @@
+body {
+      background-color: #FAFCFF;
+      color: #1E293B;
+      overflow-x: hidden;
+    }
+
+    /* Acabado metálico plateado suave para la línea PREMIUM */
+    .premium-card {
+      position: relative;
+      background: linear-gradient(155deg, #FFFFFF 0%, #F1F8FE 55%, #E4F1FC 100%);
+      border: 1.5px solid transparent;
+      background-clip: padding-box;
+    }
+    .premium-card::before {
+      content: "";
+      position: absolute;
+      inset: -1.5px;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #E2E8F0 0%, #94A3B8 42%, #F8FAFC 70%, #B8C7D9 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .silver-pill {
+      background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 52%, #CBD5E1 100%);
+      color: #334155;
+      border: 1px solid #94A3B8;
+    }
+
+    .sky-pill {
+      background: linear-gradient(135deg, #E6F3FF 0%, #CFE7FF 100%);
+      color: #0369A1;
+      border: 1px solid #7CC0FF;
+    }
+
+    /* Animaciones suaves de nubes y brillos */
+    @keyframes floatCloud {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes twinkleStar {
+      0%, 100% { opacity: 0.45; transform: scale(0.92); }
+      50% { opacity: 1; transform: scale(1.12); }
+    }
+    .animate-float { animation: floatCloud 6s ease-in-out infinite; }
+    .animate-float-slow { animation: floatCloud 8s ease-in-out 1.5s infinite; }
+    .animate-twinkle { animation: twinkleStar 3.6s ease-in-out infinite; }
+
+    /* Fondo fallback animado por si 109166.mp4 no carga en algún navegador */
+    .hero-dream-fallback {
+      background: radial-gradient(circle at 18% 22%, #E6F3FF 0%, #CFE7FF 36%, #D9F0FF 68%, #F5F3FF 100%);
+    }
+    /* El video ahora cubre toda la página: el hero queda transparente */
+    #inicio.hero-dream-fallback { background: transparent; }
+
+    /* Estilo limpio para controles deslizantes de precio */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 999px;
+      background: #CFE7FF;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -6px;
+      background-color: #52A8F8;
+      height: 18px;
+      width: 18px;
+      border-radius: 999px;
+      border: 2.5px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(82, 168, 248, 0.45);
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
